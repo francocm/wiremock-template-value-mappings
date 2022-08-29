@@ -1,0 +1,29 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPathPattern": "^/users/\\d+$",
+        "headers": {
+            "Accept": {
+                "matches": "^application/json;?.*"
+            }
+        }
+    },
+    "response": {
+        "status": 200,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "transformers": ["response-template"],
+        "transformerParameters": {
+            "usernameMapping": {
+                "1": "foo",
+                "2": "bar",
+                "3": "baz"
+            }
+        },
+        "jsonBody": {
+            "id": "{{request.pathSegments.[1]}}",
+            "username": "{{parameters.usernameMapping.2}}"
+        }
+    }
+}

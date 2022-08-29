@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  wiremock:
+    image: wiremock/wiremock:latest
+    restart: "unless-stopped"
+    volumes:
+      - "./stubs:/home/wiremock"
+    ports:
+      - "8080:8080"
+    command: --global-response-templating
