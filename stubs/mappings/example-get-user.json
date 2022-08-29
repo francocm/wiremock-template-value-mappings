@@ -22,8 +22,8 @@
             }
         },
         "jsonBody": {
-            "id": "{{request.pathSegments.[1]}}",
-            "username": "{{parameters.usernameMapping.2}}"
+            "id": "{{#assign 'userId'}}{{request.pathSegments.[1]}}{{/assign}}{{userId}}",
+            "username": "{{parameters.usernameMapping.[userId]}}"
         }
     }
 }

@@ -16,6 +16,7 @@ I have tried:
 * `{{parameters.usernameMapping[request.pathSegments.[1]]}}` <-- breaks
 * `{{parameters.usernameMapping[{{request.pathSegments.[1]}}]}}` <-- breaks
 * `{{parameters.usernameMapping.{{request.pathSegments.[1]}}}}` <-- breaks
+* `{{parameters.usernameMapping.[userId]}}` <-- _(`userId` assigned previously)_ does not break but prints nothing
 
 You can view the mapping [here](stubs/mappings/example-get-user.json).
 
