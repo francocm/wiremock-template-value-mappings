@@ -6,7 +6,9 @@ Attempting to use Wiremock standalone with global response templating to dynamic
 
 This repo is set up to demonstrate the issue I'm coming up against: _unable to fetch a value from `transformerParameters.*` dynamically_.
 
-This repo serves mainly the purpose of referncing it in a Stack Overflow question.
+This repo serves mainly the purpose of referencing it in a [Stack Overflow question](https://stackoverflow.com/questions/73531968/wiremock-dynamic-mapping-of-response-values).
+
+My goal is to populate the `username` field in the JSON response based dynamically on the input user ID, by using the JSON map under `transformerParameters.usernameMapping`.
 
 I have tried:
 
