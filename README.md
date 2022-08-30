@@ -10,13 +10,18 @@ This repo serves mainly the purpose of referencing it in a [Stack Overflow quest
 
 My goal is to populate the `username` field in the JSON response based dynamically on the input user ID, by using the JSON map under `transformerParameters.usernameMapping`.
 
-I have tried:
+~~I have tried:~~
 
-* `{{parameters.usernameMapping.2}}` <-- works but hardcoded so does not solve our problem
-* `{{parameters.usernameMapping[request.pathSegments.[1]]}}` <-- breaks
-* `{{parameters.usernameMapping[{{request.pathSegments.[1]}}]}}` <-- breaks
-* `{{parameters.usernameMapping.{{request.pathSegments.[1]}}}}` <-- breaks
-* `{{parameters.usernameMapping.[userId]}}` <-- _(`userId` assigned previously)_ does not break but prints nothing
+* ~~`{{parameters.usernameMapping.2}}` <-- works but hardcoded so does not solve our problem~~
+* ~~`{{parameters.usernameMapping[request.pathSegments.[1]]}}` <-- breaks~~
+* ~~`{{parameters.usernameMapping[{{request.pathSegments.[1]}}]}}` <-- breaks~~
+* ~~`{{parameters.usernameMapping.{{request.pathSegments.[1]}}}}` <-- breaks~~
+* ~~`{{parameters.usernameMapping.[userId]}}` <-- _(`userId` assigned previously)_ does not break but prints nothing~~
+
+## Update - Solution
+
+Use `lookup` in this manner:
+* `{{lookup parameters.usernameMapping userId}}`
 
 You can view the mapping [here](stubs/mappings/example-get-user.json).
 

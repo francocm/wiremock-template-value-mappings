@@ -23,7 +23,7 @@
         },
         "jsonBody": {
             "id": "{{#assign 'userId'}}{{request.pathSegments.[1]}}{{/assign}}{{userId}}",
-            "username": "{{parameters.usernameMapping.[userId]}}"
+            "username": "{{lookup parameters.usernameMapping userId}}"
         }
     }
 }
